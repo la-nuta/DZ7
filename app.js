@@ -4,9 +4,10 @@
     document.body.addEventListener('click', function (event) {
             let target = event.target || event.srcElement,
                 picS = target.classList.contains('small'),
-                picL = target.classList.contains('large') || target.classList.contains('act') ? target : target.closest('div'),
+                picL = target.classList.contains('large') ? target : target.closest('div'),
                 picViewer = document.getElementById('picViewer'),
                 bigPic = document.createElement('img');
+
             if (picS) {
                 picViewer.classList.add('act');
                 bigPic.setAttribute('src', target.getAttribute('src').replace("small", "large"));
